@@ -3,15 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ClearByte Systems — Quiet power. Clean control.</title>
-  <meta name="description" content="ClearByte Systems builds sleek Windows utilities that streamline focus, speed, and control. CursorDock, GhostTabs, and more." />
+  <title>ClearByte Systems — CursorDock</title>
+  <meta name="description" content="ClearByte Systems builds sleek Windows utilities that streamline focus, speed, and control. CursorDock is the flagship: a cursor-based launcher for apps, files, and folders." />
   <meta name="theme-color" content="#0b1220" />
 
   <style>
     :root{
       --bg:#070b14;
       --panel:#0b1220;
-      --panel2:#0a1326;
       --text:#e6eefc;
       --muted:#93a4c7;
       --line:rgba(255,255,255,.08);
@@ -57,8 +56,9 @@
       border:1px solid rgba(34,211,238,.25);
       display:grid; place-items:center;
       box-shadow: 0 0 0 3px rgba(34,211,238,.06) inset;
+      overflow:hidden;
     }
-    .mark svg{opacity:.9}
+    .mark img{width:100%; height:100%; object-fit:contain;}
     .brand h1{font-size:14px; margin:0; font-weight:650}
     .brand p{margin:0; font-size:12px; color:var(--muted)}
     .navlinks{display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end}
@@ -140,12 +140,14 @@
     }
     .tool:hover{border-color:rgba(34,211,238,.22); background:rgba(34,211,238,.05)}
     .tool .ico{
-      width:40px; height:40px; border-radius: 14px;
+      width:44px; height:44px; border-radius: 14px;
       background: rgba(255,255,255,.06);
       border:1px solid rgba(255,255,255,.08);
       display:grid; place-items:center;
       flex:0 0 auto;
+      overflow:hidden;
     }
+    .tool .ico img{width:70%; height:70%; object-fit:contain;}
     .tool h4{margin:0; font-size:13px; font-weight:700}
     .tool .meta{margin:4px 0 0; font-size:12px; color:var(--muted); line-height:1.4}
     .tool .tag{
@@ -193,18 +195,22 @@
       font-size:12px;
     }
     .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono","Courier New", monospace;}
+    .owner{
+      margin-top:10px;
+      color:rgba(147,164,199,.75);
+      font-size:11px;
+      letter-spacing:.2px;
+    }
   </style>
 </head>
+
 <body>
   <div class="wrap">
     <header class="nav">
       <div class="brand">
+        <!-- Uses your provided CursorDock icon file -->
         <div class="mark" aria-hidden="true">
-          <!-- Simple geometric "CB" mark placeholder -->
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-            <path d="M7 7h7a4 4 0 0 1 0 8H7V7Z" stroke="rgba(34,211,238,.95)" stroke-width="1.8" stroke-linejoin="round"/>
-            <path d="M7 15h7a3.2 3.2 0 0 1 0 6H7v-6Z" stroke="rgba(34,211,238,.65)" stroke-width="1.8" stroke-linejoin="round"/>
-          </svg>
+          <img src="cursordock-logo-256.png" alt="CursorDock icon" />
         </div>
         <div>
           <h1>ClearByte Systems</h1>
@@ -213,7 +219,7 @@
       </div>
 
       <nav class="navlinks">
-        <a class="chip" href="#tools">Tools</a>
+        <a class="chip" href="#tools">CursorDock</a>
         <a class="chip" href="#support">Support</a>
         <a class="chip" href="#changelog">Changelog</a>
         <a class="chip" href="#about">About</a>
@@ -224,13 +230,19 @@
       <h2>Premium Windows utilities that feel <span>invisible</span> until you need them.</h2>
       <p>
         ClearByte Systems builds sleek, low-friction tools for speed, focus, and control — designed to stay out of your way.
-        Each utility is lightweight, keyboard-friendly, and crafted with a calm, professional sci-fi aesthetic.
+        CursorDock is our flagship: a cursor-based launcher for apps, files, and folders.
       </p>
+
       <div class="ctaRow">
-        <!-- Replace with your Gumroad profile or collection link -->
-        <a class="btn primary" href="https://gumroad.com/" target="_blank" rel="noreferrer">View on Gumroad</a>
-        <a class="btn" href="#tools">Browse tools</a>
+        <a class="btn primary" href="https://xkaali.gumroad.com/l/CursorDock" target="_blank" rel="noreferrer">
+          Get CursorDock on Gumroad
+        </a>
+        <a class="btn" href="#tools">See features</a>
         <a class="btn" href="#support">Get support</a>
+      </div>
+
+      <div class="owner">
+        Owned & maintained by <span class="mono">xkaali</span>.
       </div>
     </section>
 
@@ -238,45 +250,26 @@
       <div class="card">
         <div class="cardHead">
           <div>
-            <h3>Tools</h3>
-            <p>Start with CursorDock. Add more as you go. Everything is built to feel native, fast, and clean.</p>
+            <h3>CursorDock</h3>
+            <p>A fast cursor-based launcher that keeps your workflow clean, fast, and focused.</p>
           </div>
-          <a class="chip" href="https://xkaali.gumroad.com/" target="_blank" rel="noreferrer">Store →</a>
+          <a class="chip" href="https://xkaali.gumroad.com/l/CursorDock" target="_blank" rel="noreferrer">Open on Gumroad →</a>
         </div>
 
         <div class="list">
-          <!-- CursorDock -->
-          <a class="tool" href="https://xkaali.gumroad.com/" target="_blank" rel="noreferrer">
-            <div class="ico" aria-hidden="true">🖱️</div>
+          <a class="tool" href="https://xkaali.gumroad.com/l/CursorDock" target="_blank" rel="noreferrer">
+            <div class="ico" aria-hidden="true">
+              <img src="cursordock-logo-256.png" alt="CursorDock icon" />
+            </div>
             <div>
               <h4>CursorDock</h4>
-              <div class="meta">Cursor-based launcher for apps, files, and folders. Summon it anywhere with a hotkey.</div>
+              <div class="meta">Summon a clean launcher at your cursor and open apps, files, or folders instantly.</div>
             </div>
             <div class="tag">Featured</div>
           </a>
 
-          <!-- GhostTabs -->
-          <a class="tool" href="https://xkaali.gumroad.com/" target="_blank" rel="noreferrer">
-            <div class="ico" aria-hidden="true">👻</div>
-            <div>
-              <h4>GhostTabs</h4>
-              <div class="meta">One hotkey to hide & restore all windows instantly. Clear your screen without closing anything.</div>
-            </div>
-            <div class="tag">Utility</div>
-          </a>
-
-          <!-- QuickNotes -->
-          <a class="tool" href="https://xkaali.gumroad.com/" target="_blank" rel="noreferrer">
-            <div class="ico" aria-hidden="true">📝</div>
-            <div>
-              <h4>QuickNotes</h4>
-              <div class="meta">Instant note overlay for quick capture anywhere. Auto-saves and stays out of your way.</div>
-            </div>
-            <div class="tag">Soon</div>
-          </a>
-
           <div class="small mono">
-            Tip: Replace the Gumroad links above with each product’s direct URL once published.
+            More ClearByte utilities are in development. CursorDock is the only public release right now.
           </div>
         </div>
       </div>
@@ -288,6 +281,7 @@
             <p>Fast help, clear answers, and lightweight updates.</p>
           </div>
         </div>
+
         <div class="small">
           <div class="cols">
             <div class="mini">
@@ -295,16 +289,19 @@
               <span class="mono">support@clearbyte.systems</span><br/>
               <span style="opacity:.9">Response typically within 24–48 hours.</span>
             </div>
+
             <div class="mini">
               <b>System</b><br/>
               Windows 10/11 (64-bit)<br/>
-              Lightweight background utilities
+              Lightweight background utility
             </div>
+
             <div class="mini" id="changelog">
               <b>Changelog</b><br/>
               <span class="mono">CursorDock v1.0</span> — Initial release<br/>
-              <span class="mono">GhostTabs v1.0</span> — Added toggle + tray
+              <span class="mono">v1.x</span> — UI polish + app/file/folder shortcuts
             </div>
+
             <div class="mini">
               <b>Refunds</b><br/>
               If something doesn’t work on your system, contact support and we’ll help.
@@ -312,8 +309,10 @@
           </div>
 
           <div style="margin-top:14px; padding-top:12px; border-top:1px solid rgba(255,255,255,.07)">
-            <b>Press kit</b><br/>
-            Add screenshots, icons, and branding here later for creators/reviewers.
+            <b>Gumroad</b><br/>
+            <a class="mono" href="https://xkaali.gumroad.com/l/CursorDock" target="_blank" rel="noreferrer" style="color:rgba(34,211,238,.95)">
+              xkaali.gumroad.com/l/CursorDock
+            </a>
           </div>
         </div>
       </aside>
