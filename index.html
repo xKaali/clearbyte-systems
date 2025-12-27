@@ -7,10 +7,27 @@
   <meta name="description" content="ClearByte Systems builds sleek Windows utilities for speed, focus, and control. CursorDock is our flagship cursor-based launcher." />
   <meta name="theme-color" content="#0b1220" />
 
+  <!-- ✅ Inline SVG favicon (no files to load) -->
+  <link rel="icon" type="image/svg+xml"
+    href='data:image/svg+xml;utf8,
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+      <defs>
+        <radialGradient id="bg" cx="30%" cy="30%" r="70%">
+          <stop offset="0%" stop-color="%2322d3ee" stop-opacity="0.35"/>
+          <stop offset="100%" stop-color="%230b1220" stop-opacity="1"/>
+        </radialGradient>
+        <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="%2322d3ee"/>
+          <stop offset="100%" stop-color="%2306b6d4"/>
+        </linearGradient>
+      </defs>
+      <rect x="10" y="10" width="180" height="180" rx="42" fill="url(%23bg)" stroke="rgba(34,211,238,.25)" stroke-width="3"/>
+      <path d="M80 50 H115 C140 50 145 70 135 82 C150 95 145 120 120 120 H80 Z" fill="url(%23g)"/>
+    </svg>' />
+
   <style>
     :root{
       --bg:#070b14;
-      --panel:#0b1220;
       --text:#e6eefc;
       --muted:#93a4c7;
       --line:rgba(255,255,255,.08);
@@ -33,7 +50,6 @@
     a{color:inherit;text-decoration:none}
     .wrap{max-width:1100px;margin:0 auto;padding:28px 18px 64px}
 
-    /* Header */
     .nav{
       display:flex;align-items:center;justify-content:space-between;
       gap:16px;padding:14px 16px;
@@ -50,6 +66,7 @@
       background:rgba(255,255,255,.04);
       border:1px solid rgba(34,211,238,.25);
       box-shadow:0 0 0 3px rgba(34,211,238,.06) inset;
+      overflow:hidden;
     }
     .brand h1{margin:0;font-size:14px;font-weight:650}
     .brand p{margin:0;font-size:12px;color:var(--muted)}
@@ -63,7 +80,6 @@
     }
     .chip:hover{color:var(--text);border-color:rgba(34,211,238,.25)}
 
-    /* Hero */
     .hero{padding:46px 4px 22px}
     .hero h2{margin:0 0 10px;font-size:42px;line-height:1.05}
     .hero h2 span{color:var(--cyan)}
@@ -75,6 +91,7 @@
       background:rgba(255,255,255,.04);
       font-size:13px;font-weight:600;
       transition:.18s ease;
+      display:inline-flex;align-items:center;gap:10px;
     }
     .btn.primary{
       background:linear-gradient(135deg,rgba(34,211,238,.22),rgba(6,182,212,.10));
@@ -83,7 +100,6 @@
     .btn:hover{border-color:rgba(34,211,238,.35)}
     .owner{margin-top:12px;font-size:11px;color:rgba(147,164,199,.7)}
 
-    /* Cards */
     .grid{margin-top:22px;display:grid;grid-template-columns:1.2fr .8fr;gap:16px}
     @media(max-width:900px){.grid{grid-template-columns:1fr}.hero h2{font-size:34px}}
     .card{
@@ -104,6 +120,7 @@
       border:1px solid rgba(255,255,255,.06);
       background:rgba(0,0,0,.18);
       transition:.18s ease;
+      align-items:flex-start;
     }
     .tool:hover{border-color:rgba(34,211,238,.25)}
     .ico{
@@ -111,6 +128,8 @@
       background:rgba(255,255,255,.05);
       border:1px solid rgba(255,255,255,.08);
       display:grid;place-items:center;
+      overflow:hidden;
+      flex:0 0 auto;
     }
     .meta{font-size:12px;color:var(--muted)}
     .tag{
@@ -121,26 +140,28 @@
       color:rgba(34,211,238,.95);
       border:1px solid rgba(34,211,238,.18);
       background:rgba(34,211,238,.06);
+      white-space:nowrap;
+      align-self:center;
     }
 
-    /* Footer */
     .footer{
       margin-top:28px;padding-top:18px;
       border-top:1px solid var(--line);
       display:flex;justify-content:space-between;
       font-size:12px;color:var(--muted);
+      gap:10px;flex-wrap:wrap;
     }
+    .mono{font-family: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;}
   </style>
 </head>
 
 <body>
 <div class="wrap">
 
-  <!-- Header -->
   <header class="nav">
     <div class="brand">
-      <div class="mark">
-        <!-- Inline ClearByte SVG Logo -->
+      <div class="mark" aria-hidden="true">
+        <!-- ✅ Inline ClearByte logo (can’t fail) -->
         <svg width="28" height="28" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <radialGradient id="bgGlow" cx="30%" cy="30%" r="70%">
@@ -171,7 +192,6 @@
     </nav>
   </header>
 
-  <!-- Hero -->
   <section class="hero">
     <h2>Windows utilities that feel <span>invisible</span> until you need them.</h2>
     <p>
@@ -179,14 +199,14 @@
       CursorDock is our first release — a cursor-based launcher for apps, files, and folders.
     </p>
     <div class="ctaRow">
-      <a class="btn primary" href="https://xkaali.gumroad.com/l/CursorDock" target="_blank">
+      <a class="btn primary" href="https://xkaali.gumroad.com/l/CursorDock" target="_blank" rel="noreferrer">
         Get CursorDock on Gumroad
       </a>
+      <a class="btn" href="#support">Support</a>
     </div>
     <div class="owner">ClearByte Systems is owned and maintained by <b>xkaali</b>.</div>
   </section>
 
-  <!-- Product -->
   <section class="grid" id="product">
     <div class="card">
       <div class="cardHead">
@@ -194,8 +214,17 @@
         <p>Instant cursor-based launcher for Windows.</p>
       </div>
       <div class="list">
-        <a class="tool" href="https://xkaali.gumroad.com/l/CursorDock" target="_blank">
-          <div class="ico">🖱️</div>
+        <a class="tool" href="https://xkaali.gumroad.com/l/CursorDock" target="_blank" rel="noreferrer">
+          <div class="ico" aria-hidden="true">
+            <!-- ✅ Inline CursorDock icon (can’t fail) -->
+            <svg width="26" height="26" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+              <path d="M64 12 L178 126 L124 138 L146 220 L120 232 L98 150 L64 184 Z" fill="#22d3ee"/>
+              <rect x="172" y="160" width="28" height="28" fill="#22d3ee" opacity="0.85"/>
+              <rect x="206" y="160" width="28" height="28" fill="#22d3ee" opacity="0.65"/>
+              <rect x="172" y="194" width="28" height="28" fill="#22d3ee" opacity="0.65"/>
+              <rect x="206" y="194" width="28" height="28" fill="#22d3ee" opacity="0.45"/>
+            </svg>
+          </div>
           <div>
             <strong>CursorDock</strong>
             <div class="meta">Launch apps, files, and folders from anywhere with a hotkey.</div>
@@ -205,7 +234,6 @@
       </div>
     </div>
 
-    <!-- Support -->
     <aside class="card" id="support">
       <div class="cardHead">
         <h3>Support</h3>
@@ -222,7 +250,7 @@
 
   <footer class="footer">
     <div>© <span id="year"></span> ClearByte Systems</div>
-    <div>Quiet power. Clean control.</div>
+    <div class="mono">Quiet power. Clean control.</div>
   </footer>
 
 </div>
