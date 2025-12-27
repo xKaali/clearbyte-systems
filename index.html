@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ClearByte Systems — CursorDock</title>
-  <meta name="description" content="ClearByte Systems builds sleek Windows utilities that streamline focus, speed, and control. CursorDock is the flagship: a cursor-based launcher for apps, files, and folders." />
+  <title>ClearByte Systems — Quiet power. Clean control.</title>
+  <meta name="description" content="ClearByte Systems builds sleek Windows utilities for speed, focus, and control. CursorDock is our flagship cursor-based launcher." />
   <meta name="theme-color" content="#0b1220" />
 
   <style>
@@ -15,14 +15,13 @@
       --muted:#93a4c7;
       --line:rgba(255,255,255,.08);
       --cyan:#22d3ee;
-      --cyan2:#06b6d4;
-      --shadow: 0 18px 60px rgba(0,0,0,.55);
-      --radius: 22px;
+      --shadow:0 18px 60px rgba(0,0,0,.55);
+      --radius:22px;
     }
     *{box-sizing:border-box}
     body{
       margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial;
       color:var(--text);
       background:
         radial-gradient(900px 500px at 15% 10%, rgba(34,211,238,.16), transparent 60%),
@@ -31,301 +30,205 @@
         var(--bg);
       min-height:100vh;
     }
-    a{color:inherit; text-decoration:none}
-    .wrap{max-width:1100px; margin:0 auto; padding:28px 18px 64px;}
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:1100px;margin:0 auto;padding:28px 18px 64px}
+
+    /* Header */
     .nav{
-      display:flex; align-items:center; justify-content:space-between;
-      gap:16px;
-      padding:14px 16px;
+      display:flex;align-items:center;justify-content:space-between;
+      gap:16px;padding:14px 16px;
       border:1px solid var(--line);
-      background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
-      border-radius: 18px;
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(14px);
+      background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02));
+      border-radius:18px;
+      box-shadow:var(--shadow);
+      backdrop-filter:blur(14px);
     }
-    .brand{
-      display:flex; align-items:center; gap:12px;
-      letter-spacing:.2px;
-    }
+    .brand{display:flex;align-items:center;gap:12px}
     .mark{
-      width:38px; height:38px; border-radius:14px;
-      background:
-        radial-gradient(18px 18px at 30% 30%, rgba(34,211,238,.55), transparent 60%),
-        radial-gradient(18px 18px at 70% 70%, rgba(6,182,212,.35), transparent 60%),
-        rgba(255,255,255,.06);
+      width:42px;height:42px;border-radius:16px;
+      display:grid;place-items:center;
+      background:rgba(255,255,255,.04);
       border:1px solid rgba(34,211,238,.25);
-      display:grid; place-items:center;
-      box-shadow: 0 0 0 3px rgba(34,211,238,.06) inset;
-      overflow:hidden;
+      box-shadow:0 0 0 3px rgba(34,211,238,.06) inset;
     }
-    .mark img{width:100%; height:100%; object-fit:contain;}
-    .brand h1{font-size:14px; margin:0; font-weight:650}
-    .brand p{margin:0; font-size:12px; color:var(--muted)}
-    .navlinks{display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end}
+    .brand h1{margin:0;font-size:14px;font-weight:650}
+    .brand p{margin:0;font-size:12px;color:var(--muted)}
+    .navlinks{display:flex;gap:8px}
     .chip{
-      padding:9px 12px;
-      border-radius: 999px;
+      padding:9px 12px;border-radius:999px;
       border:1px solid var(--line);
-      background: rgba(255,255,255,.03);
-      color: var(--muted);
-      font-size:12px;
-      transition: all .18s ease;
+      background:rgba(255,255,255,.03);
+      color:var(--muted);font-size:12px;
+      transition:.18s ease;
     }
-    .chip:hover{color:var(--text); border-color:rgba(34,211,238,.25); background:rgba(34,211,238,.06)}
+    .chip:hover{color:var(--text);border-color:rgba(34,211,238,.25)}
+
+    /* Hero */
     .hero{padding:46px 4px 22px}
-    .hero h2{
-      margin:0 0 10px;
-      font-size:42px;
-      line-height:1.05;
-      letter-spacing:-.5px;
-    }
+    .hero h2{margin:0 0 10px;font-size:42px;line-height:1.05}
     .hero h2 span{color:var(--cyan)}
-    .hero p{
-      margin:0 0 18px;
-      color:var(--muted);
-      font-size:16px;
-      line-height:1.55;
-      max-width: 780px;
-    }
-    .ctaRow{display:flex; gap:12px; flex-wrap:wrap; align-items:center}
+    .hero p{margin:0 0 18px;color:var(--muted);max-width:780px}
+    .ctaRow{display:flex;gap:12px;flex-wrap:wrap}
     .btn{
-      padding:11px 14px;
-      border-radius: 14px;
+      padding:11px 14px;border-radius:14px;
       border:1px solid var(--line);
-      background: rgba(255,255,255,.04);
-      color: var(--text);
-      font-size:13px;
-      font-weight:600;
-      display:inline-flex; align-items:center; gap:10px;
-      transition: all .18s ease;
+      background:rgba(255,255,255,.04);
+      font-size:13px;font-weight:600;
+      transition:.18s ease;
     }
-    .btn:hover{border-color:rgba(34,211,238,.28); background:rgba(34,211,238,.08)}
     .btn.primary{
-      background: linear-gradient(135deg, rgba(34,211,238,.22), rgba(6,182,212,.10));
-      border-color: rgba(34,211,238,.25);
+      background:linear-gradient(135deg,rgba(34,211,238,.22),rgba(6,182,212,.10));
+      border-color:rgba(34,211,238,.25);
     }
-    .grid{
-      margin-top:22px;
-      display:grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap:16px;
-    }
-    @media (max-width: 900px){
-      .grid{grid-template-columns:1fr}
-      .hero h2{font-size:34px}
-    }
+    .btn:hover{border-color:rgba(34,211,238,.35)}
+    .owner{margin-top:12px;font-size:11px;color:rgba(147,164,199,.7)}
+
+    /* Cards */
+    .grid{margin-top:22px;display:grid;grid-template-columns:1.2fr .8fr;gap:16px}
+    @media(max-width:900px){.grid{grid-template-columns:1fr}.hero h2{font-size:34px}}
     .card{
-      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.03));
       border:1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(16px);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      backdrop-filter:blur(16px);
       overflow:hidden;
     }
-    .cardHead{
-      padding:16px 16px 0;
-      display:flex; justify-content:space-between; align-items:flex-start; gap:10px;
-    }
-    .cardHead h3{margin:0; font-size:14px; font-weight:700}
-    .cardHead p{margin:6px 0 0; color:var(--muted); font-size:12px; line-height:1.5}
-    .list{padding:14px 14px 14px}
+    .cardHead{padding:16px}
+    .cardHead h3{margin:0;font-size:14px}
+    .cardHead p{margin:6px 0 0;font-size:12px;color:var(--muted)}
+    .list{padding:14px}
     .tool{
-      display:flex; gap:12px; align-items:flex-start;
-      padding:12px 12px;
-      border-radius: 16px;
+      display:flex;gap:12px;padding:12px;
+      border-radius:16px;
       border:1px solid rgba(255,255,255,.06);
-      background: rgba(0,0,0,.18);
-      margin-bottom:10px;
-      transition: all .18s ease;
+      background:rgba(0,0,0,.18);
+      transition:.18s ease;
     }
-    .tool:hover{border-color:rgba(34,211,238,.22); background:rgba(34,211,238,.05)}
-    .tool .ico{
-      width:44px; height:44px; border-radius: 14px;
-      background: rgba(255,255,255,.06);
+    .tool:hover{border-color:rgba(34,211,238,.25)}
+    .ico{
+      width:44px;height:44px;border-radius:14px;
+      background:rgba(255,255,255,.05);
       border:1px solid rgba(255,255,255,.08);
-      display:grid; place-items:center;
-      flex:0 0 auto;
-      overflow:hidden;
+      display:grid;place-items:center;
     }
-    .tool .ico img{width:70%; height:70%; object-fit:contain;}
-    .tool h4{margin:0; font-size:13px; font-weight:700}
-    .tool .meta{margin:4px 0 0; font-size:12px; color:var(--muted); line-height:1.4}
-    .tool .tag{
+    .meta{font-size:12px;color:var(--muted)}
+    .tag{
       margin-left:auto;
-      font-size:11px;
       padding:6px 10px;
       border-radius:999px;
-      border:1px solid rgba(34,211,238,.18);
-      color: rgba(34,211,238,.95);
-      background: rgba(34,211,238,.06);
-      white-space:nowrap;
-      align-self:center;
-    }
-    .small{
-      padding:14px 16px 16px;
-      color:var(--muted);
-      font-size:12px;
-      line-height:1.55;
-    }
-    .cols{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:10px;
-      margin-top:10px;
-    }
-    @media (max-width: 520px){
-      .cols{grid-template-columns:1fr}
-    }
-    .mini{
-      border:1px solid rgba(255,255,255,.07);
-      background: rgba(0,0,0,.18);
-      border-radius: 16px;
-      padding:12px;
-    }
-    .mini b{color:var(--text)}
-    .footer{
-      margin-top:28px;
-      padding-top:18px;
-      border-top:1px solid var(--line);
-      color:var(--muted);
-      display:flex;
-      justify-content:space-between;
-      gap:12px;
-      flex-wrap:wrap;
-      font-size:12px;
-    }
-    .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono","Courier New", monospace;}
-    .owner{
-      margin-top:10px;
-      color:rgba(147,164,199,.75);
       font-size:11px;
-      letter-spacing:.2px;
+      color:rgba(34,211,238,.95);
+      border:1px solid rgba(34,211,238,.18);
+      background:rgba(34,211,238,.06);
+    }
+
+    /* Footer */
+    .footer{
+      margin-top:28px;padding-top:18px;
+      border-top:1px solid var(--line);
+      display:flex;justify-content:space-between;
+      font-size:12px;color:var(--muted);
     }
   </style>
 </head>
 
 <body>
-  <div class="wrap">
-    <header class="nav">
-      <div class="brand">
-        <!-- Uses your provided CursorDock icon file -->
-        <div class="mark" aria-hidden="true">
-          <img src="cursordock-logo-256.png" alt="CursorDock icon" />
-        </div>
-        <div>
-          <h1>ClearByte Systems</h1>
-          <p>Quiet power. Clean control.</p>
-        </div>
+<div class="wrap">
+
+  <!-- Header -->
+  <header class="nav">
+    <div class="brand">
+      <div class="mark">
+        <!-- Inline ClearByte SVG Logo -->
+        <svg width="28" height="28" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="bgGlow" cx="30%" cy="30%" r="70%">
+              <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.35"/>
+              <stop offset="100%" stop-color="#0b1220" stop-opacity="1"/>
+            </radialGradient>
+            <linearGradient id="glyph" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#22d3ee"/>
+              <stop offset="100%" stop-color="#06b6d4"/>
+            </linearGradient>
+          </defs>
+          <rect x="10" y="10" width="180" height="180" rx="42"
+                fill="url(#bgGlow)" stroke="rgba(34,211,238,.25)" stroke-width="3"/>
+          <path d="M80 50 H115 C140 50 145 70 135 82
+                   C150 95 145 120 120 120 H80 Z"
+                fill="url(#glyph)"/>
+        </svg>
       </div>
+      <div>
+        <h1>ClearByte Systems</h1>
+        <p>Quiet power. Clean control.</p>
+      </div>
+    </div>
 
-      <nav class="navlinks">
-        <a class="chip" href="#tools">CursorDock</a>
-        <a class="chip" href="#support">Support</a>
-        <a class="chip" href="#changelog">Changelog</a>
-        <a class="chip" href="#about">About</a>
-      </nav>
-    </header>
+    <nav class="navlinks">
+      <a class="chip" href="#product">CursorDock</a>
+      <a class="chip" href="#support">Support</a>
+    </nav>
+  </header>
 
-    <section class="hero" id="about">
-      <h2>Premium Windows utilities that feel <span>invisible</span> until you need them.</h2>
-      <p>
-        ClearByte Systems builds sleek, low-friction tools for speed, focus, and control — designed to stay out of your way.
-        CursorDock is our flagship: a cursor-based launcher for apps, files, and folders.
-      </p>
+  <!-- Hero -->
+  <section class="hero">
+    <h2>Windows utilities that feel <span>invisible</span> until you need them.</h2>
+    <p>
+      ClearByte Systems builds calm, low-friction tools for speed and focus.
+      CursorDock is our first release — a cursor-based launcher for apps, files, and folders.
+    </p>
+    <div class="ctaRow">
+      <a class="btn primary" href="https://xkaali.gumroad.com/l/CursorDock" target="_blank">
+        Get CursorDock on Gumroad
+      </a>
+    </div>
+    <div class="owner">ClearByte Systems is owned and maintained by <b>xkaali</b>.</div>
+  </section>
 
-      <div class="ctaRow">
-        <a class="btn primary" href="https://xkaali.gumroad.com/l/CursorDock" target="_blank" rel="noreferrer">
-          Get CursorDock on Gumroad
+  <!-- Product -->
+  <section class="grid" id="product">
+    <div class="card">
+      <div class="cardHead">
+        <h3>CursorDock</h3>
+        <p>Instant cursor-based launcher for Windows.</p>
+      </div>
+      <div class="list">
+        <a class="tool" href="https://xkaali.gumroad.com/l/CursorDock" target="_blank">
+          <div class="ico">🖱️</div>
+          <div>
+            <strong>CursorDock</strong>
+            <div class="meta">Launch apps, files, and folders from anywhere with a hotkey.</div>
+          </div>
+          <div class="tag">Available</div>
         </a>
-        <a class="btn" href="#tools">See features</a>
-        <a class="btn" href="#support">Get support</a>
       </div>
+    </div>
 
-      <div class="owner">
-        Owned & maintained by <span class="mono">xkaali</span>.
+    <!-- Support -->
+    <aside class="card" id="support">
+      <div class="cardHead">
+        <h3>Support</h3>
+        <p>Fast help and clear answers.</p>
       </div>
-    </section>
-
-    <section class="grid" id="tools">
-      <div class="card">
-        <div class="cardHead">
-          <div>
-            <h3>CursorDock</h3>
-            <p>A fast cursor-based launcher that keeps your workflow clean, fast, and focused.</p>
-          </div>
-          <a class="chip" href="https://xkaali.gumroad.com/l/CursorDock" target="_blank" rel="noreferrer">Open on Gumroad →</a>
-        </div>
-
-        <div class="list">
-          <a class="tool" href="https://xkaali.gumroad.com/l/CursorDock" target="_blank" rel="noreferrer">
-            <div class="ico" aria-hidden="true">
-              <img src="cursordock-logo-256.png" alt="CursorDock icon" />
-            </div>
-            <div>
-              <h4>CursorDock</h4>
-              <div class="meta">Summon a clean launcher at your cursor and open apps, files, or folders instantly.</div>
-            </div>
-            <div class="tag">Featured</div>
-          </a>
-
-          <div class="small mono">
-            More ClearByte utilities are in development. CursorDock is the only public release right now.
-          </div>
+      <div class="list">
+        <div class="meta">
+          Email: <b>support@clearbyte.systems</b><br/>
+          Windows 10 / 11 (64-bit)
         </div>
       </div>
+    </aside>
+  </section>
 
-      <aside class="card" id="support">
-        <div class="cardHead">
-          <div>
-            <h3>Support</h3>
-            <p>Fast help, clear answers, and lightweight updates.</p>
-          </div>
-        </div>
+  <footer class="footer">
+    <div>© <span id="year"></span> ClearByte Systems</div>
+    <div>Quiet power. Clean control.</div>
+  </footer>
 
-        <div class="small">
-          <div class="cols">
-            <div class="mini">
-              <b>Email</b><br/>
-              <span class="mono">support@clearbyte.systems</span><br/>
-              <span style="opacity:.9">Response typically within 24–48 hours.</span>
-            </div>
+</div>
 
-            <div class="mini">
-              <b>System</b><br/>
-              Windows 10/11 (64-bit)<br/>
-              Lightweight background utility
-            </div>
-
-            <div class="mini" id="changelog">
-              <b>Changelog</b><br/>
-              <span class="mono">CursorDock v1.0</span> — Initial release<br/>
-              <span class="mono">v1.x</span> — UI polish + app/file/folder shortcuts
-            </div>
-
-            <div class="mini">
-              <b>Refunds</b><br/>
-              If something doesn’t work on your system, contact support and we’ll help.
-            </div>
-          </div>
-
-          <div style="margin-top:14px; padding-top:12px; border-top:1px solid rgba(255,255,255,.07)">
-            <b>Gumroad</b><br/>
-            <a class="mono" href="https://xkaali.gumroad.com/l/CursorDock" target="_blank" rel="noreferrer" style="color:rgba(34,211,238,.95)">
-              xkaali.gumroad.com/l/CursorDock
-            </a>
-          </div>
-        </div>
-      </aside>
-    </section>
-
-    <footer class="footer">
-      <div>© <span id="y"></span> ClearByte Systems</div>
-      <div class="mono">Quiet power. Clean control.</div>
-    </footer>
-  </div>
-
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
