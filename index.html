@@ -161,25 +161,35 @@
   <header class="nav">
     <div class="brand">
       <div class="mark" aria-hidden="true">
-        <!-- ✅ Inline ClearByte logo (can’t fail) -->
-        <svg width="28" height="28" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <radialGradient id="bgGlow" cx="30%" cy="30%" r="70%">
-              <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.35"/>
-              <stop offset="100%" stop-color="#0b1220" stop-opacity="1"/>
-            </radialGradient>
-            <linearGradient id="glyph" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#22d3ee"/>
-              <stop offset="100%" stop-color="#06b6d4"/>
-            </linearGradient>
-          </defs>
-          <rect x="10" y="10" width="180" height="180" rx="42"
-                fill="url(#bgGlow)" stroke="rgba(34,211,238,.25)" stroke-width="3"/>
-          <path d="M80 50 H115 C140 50 145 70 135 82
-                   C150 95 145 120 120 120 H80 Z"
-                fill="url(#glyph)"/>
-        </svg>
-      </div>
+  <!-- ClearByte Seal Logo -->
+  <svg width="28" height="28" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img">
+    <defs>
+      <radialGradient id="cb_bg" cx="30%" cy="25%" r="80%">
+        <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.35"/>
+        <stop offset="55%" stop-color="#0b2440" stop-opacity="1"/>
+        <stop offset="100%" stop-color="#071425" stop-opacity="1"/>
+      </radialGradient>
+    </defs>
+
+    <rect x="10" y="10" width="180" height="180" rx="42" fill="url(#cb_bg)" />
+    <circle cx="100" cy="100" r="72" fill="none" stroke="#ffffff" stroke-width="12" opacity="0.98"/>
+
+    <path d="M118 62
+             C95 56 76 70 72 92
+             C68 114 82 136 105 140
+             C112 141 119 140 125 138"
+          fill="none" stroke="#ffffff" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" opacity="0.98"/>
+
+    <path d="M106 64
+             V136
+             M106 64
+             H124
+             C138 64 142 78 134 86
+             C144 94 142 114 126 114
+             H106"
+          fill="none" stroke="#ffffff" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" opacity="0.98"/>
+  </svg>
+</div>
       <div>
         <h1>ClearByte Systems</h1>
         <p>Quiet power. Clean control.</p>
